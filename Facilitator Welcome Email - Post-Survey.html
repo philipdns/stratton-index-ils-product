@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facilitator Welcome Email — Stratton Index</title>
+<!--
+  =============================================================
+  ILS FACILITATOR WELCOME EMAIL — sent on certification sign-up
+  =============================================================
+  Same bulletproof build rules as the cohort invite:
+    - Tables for layout
+    - Inline styles only on the email content
+    - System fonts (Arial / Helvetica) — no webfonts
+    - No gradients, no flex, no box-shadows, no pseudo-elements
+    - 640px fixed-width wrapper, centered
+
+  Mail-merge tag: {{FirstName}}
+  The gray "viewer chrome" outside the email card is decorative —
+  copy only the contents of the white email <table> when pasting.
+  =============================================================
+-->
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #ECF1F9;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .viewer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 16px 64px;
+  }
+  .viewer-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #5b6577;
+    font-weight: 600;
+  }
+  .viewer-bar .dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: #2547A0;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .email-meta {
+    background: #ffffff;
+    border: 1px solid #D9E4F3;
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+    padding: 18px 28px 16px;
+    max-width: 640px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .email-meta .subject {
+    font-size: 15px;
+    font-weight: 600;
+    color: #212020;
+    margin-bottom: 10px;
+  }
+  .email-meta .row {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #5b6577;
+  }
+  .email-meta .row .lbl {
+    color: #98a0b0;
+    width: 60px;
+    flex-shrink: 0;
+    font-weight: 500;
+  }
+  .email-meta .row .val { color: #212020; }
+  .email-meta .row .val .muted { color: #6b7280; }
+  .merge-hint {
+    margin: 18px auto 0;
+    max-width: 640px;
+    padding: 14px 18px;
+    background: #ffffff;
+    border: 1px dashed #c7d4ea;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #4a5468;
+    line-height: 1.55;
+    box-sizing: border-box;
+  }
+  .merge-hint strong { color: #2547A0; font-weight: 600; }
+  .merge-hint code {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    background: #ECF1F9;
+    color: #2547A0;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 11.5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="viewer">
+
+  <div class="viewer-bar">
+    <span><span class="dot"></span>Email preview · facilitator onboarding</span>
+    <span>Mail-merge: {{FirstName}}</span>
+  </div>
+
+  <!-- Faux email-client header (decorative only) -->
+  <div class="email-meta">
+    <div class="subject">Welcome to ILS — your facilitator certification path</div>
+    <div class="row"><span class="lbl">From</span><span class="val">Laura at Stratton Index &lt;info@strattonindex.com&gt;
+</span></div>
+    <div class="row"><span class="lbl">To</span><span class="val">{{FirstName}} {{LastName}} <span class="muted">&lt;{{Email}}&gt;</span></span></div>
+    <div class="row"><span class="lbl">Attached</span><span class="val"><span class="muted">Facilitator&nbsp;Guide.pdf · ILS&nbsp;Workshop&nbsp;Deck.pptx · ILS&nbsp;Debrief&nbsp;Deck.pptx · ILS&nbsp;Licensing&nbsp;Agreement.pdf</span></span></div>
+  </div>
+
+  <!-- ================================================================
+       THE EMAIL ITSELF — copy this <table> and everything inside it.
+       ================================================================ -->
+  <table align="center" width="640" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:640px;max-width:640px;margin:0 auto;background:#ffffff;border:1px solid #D9E4F3;border-collapse:separate;">
+
+    <!-- Header: logo -->
+    <tbody><tr>
+      <td align="left" style="padding:24px 36px 18px 36px;border-bottom:1px solid #ECF1F9;">
+        <img src="https://images.squarespace-cdn.com/content/v1/6865588feaced76df6bb0ea5/a8a0d5e6-f1fe-4b9a-ae15-6735637bd6e4/1.+Stratton+Index+Logo_Horizontal+Lookup+1.png?format=1500w" alt="Stratton Index" width="180" style="height:auto;display:block;border:0;">
+      </td>
+    </tr>
+
+    <!-- Eyebrow + greeting -->
+    <tr>
+      <td style="padding:32px 36px 0 36px;font-family:Arial,Helvetica,sans-serif;">
+        <div style="font-size:11px;font-weight:bold;letter-spacing:0.18em;text-transform:uppercase;color:#2547A0;margin:0 0 10px 0;">Facilitator certification &middot; Welcome</div>
+        <div style="font-size:24px;font-weight:bold;color:#212020;line-height:1.25;letter-spacing:-0.01em;margin:0 0 18px 0;">Welcome to the ILS facilitator community.</div>
+      </td>
+    </tr>
+
+    <!-- Body intro -->
+    <tr>
+      <td style="padding:0 36px 8px 36px;font-family:Arial,Helvetica,sans-serif;color:#212020;font-size:15px;line-height:1.6;text-align:left;">
+
+        <p style="margin:0 0 16px 0;font-size:16px;color:#212020;">Hi {{FirstName}},</p>
+
+        <p style="margin:0 0 16px 0;color:#212020;">We’re excited that you’ve decided to move forward with your Interpersonal Leadership Styles™ certification. Because you’ve already taken the ILS through another facilitator, you can skip that first step entirely.</p>
+
+        <p style="margin:0 0 22px 0;color:#212020;">From here it’s four steps: the E-Course, the Facilitator’s Guide, our Quick Tip Videos, and a one-hour Q&amp;A with Philip. Your materials are attached above — the path below shows the recommended order, and the rest of the email has the specifics for each.</p>
+
+      </td>
+    </tr>
+
+    <!-- Attachments card -->
+    <tr>
+      <td style="padding:0 36px 28px 36px;">
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="100%" style="width:100%;background:#F7F8FA;border:1px solid #D9E4F3;border-collapse:collapse;">
+          <tbody>
+            <tr>
+              <td style="padding:14px 18px 6px 18px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;letter-spacing:0.16em;text-transform:uppercase;color:#2547A0;">Attached to this email</td>
+            </tr>
+            <tr>
+              <td style="padding:0 18px 14px 18px;font-family:Arial,Helvetica,sans-serif;">
+                <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="100%" style="width:100%;border-collapse:collapse;">
+                  <tbody>
+                    <tr>
+                      <td valign="top" style="padding:8px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#212020;line-height:1.5;border-bottom:1px solid #E4EAF3;">
+                        <strong style="font-weight:bold;color:#212020;">Stratton Index Facilitator Guide</strong>
+                        <span style="color:#6b7280;font-size:13px;">&nbsp;&middot;&nbsp;PDF &mdash; read cover to cover before your Q&amp;A</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td valign="top" style="padding:8px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#212020;line-height:1.5;border-bottom:1px solid #E4EAF3;">
+                        <strong style="font-weight:bold;color:#212020;">ILS Workshop Decks &times;&thinsp;2</strong>
+                        <span style="color:#6b7280;font-size:13px;">&nbsp;&middot;&nbsp;PPTX &mdash; use these to deliver sessions to your clients</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td valign="top" style="padding:8px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#212020;line-height:1.5;border-bottom:1px solid #E4EAF3;">
+                        <strong style="font-weight:bold;color:#212020;">Your ILS report</strong>
+                        <span style="color:#6b7280;font-size:13px;">&nbsp;&middot;&nbsp;PDF &mdash; from your own assessment, for reference</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td valign="top" style="padding:8px 0 4px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#212020;line-height:1.5;">
+                        <strong style="font-weight:bold;color:#212020;">ILS Licensing Agreement</strong>
+                        <span style="color:#6b7280;font-size:13px;">&nbsp;&middot;&nbsp;please sign and return when you have a moment</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+
+    <!-- "Your certification path" overview -->
+    <tr>
+      <td style="padding:0 36px 8px 36px;font-family:Arial,Helvetica,sans-serif;">
+        <div style="font-size:11px;font-weight:bold;letter-spacing:0.18em;text-transform:uppercase;color:#2547A0;margin:0 0 8px 0;">Your certification path</div>
+        <div style="font-size:18px;font-weight:bold;color:#212020;line-height:1.35;margin:0 0 4px 0;">Four steps for you, in this order.</div>
+        <p style="margin:0 0 16px 0;font-size:14px;color:#6b7280;line-height:1.55;">You&rsquo;ve already taken the ILS, so the remaining path takes roughly two to three hours total, spread across whatever schedule works for you.</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:0 36px 32px 36px;">
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="100%" style="width:100%;border-collapse:collapse;">
+          <tbody>
+            <tr>
+              <td width="32" valign="top" style="width:32px;padding:12px 12px 12px 0;border-top:1px solid #ECF1F9;border-bottom:1px solid #ECF1F9;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#3a8a5f;text-align:left;line-height:1.5;">&#10003;</td>
+              <td valign="top" style="padding:12px 12px 12px 0;border-top:1px solid #ECF1F9;border-bottom:1px solid #ECF1F9;font-family:Arial,Helvetica,sans-serif;font-size:14.5px;color:#8a93a4;line-height:1.55;">
+                <strong style="font-weight:bold;color:#8a93a4;text-decoration:line-through;">Complete the ILS survey</strong>
+                <span style="color:#8a93a4;font-size:13px;">&nbsp;&middot;&nbsp;already taken through another facilitator</span>
+              </td>
+              <td valign="top" align="right" style="font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#3a8a5f;letter-spacing:0.08em;text-transform:uppercase;line-height:1.55;padding:12px 0;border-top:1px solid #ECF1F9;border-bottom:1px solid #ECF1F9;white-space:nowrap;">Skip</td>
+            </tr>
+            <tr>
+              <td width="32" valign="top" style="width:32px;padding:12px 12px 12px 0;border-bottom:1px solid #ECF1F9;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#2547A0;text-align:left;line-height:1.5;">2.</td>
+              <td valign="top" style="padding:12px 12px 12px 0;border-bottom:1px solid #ECF1F9;font-family:Arial,Helvetica,sans-serif;font-size:14.5px;color:#212020;line-height:1.55;">
+                <strong style="font-weight:bold;">Complete the ILS E-Course</strong>
+                <span style="color:#6b7280;font-size:13px;">&nbsp;&middot;&nbsp;short videos and scenarios that deepen your reading of the survey</span>
+              </td>
+              <td valign="top" align="right" style="font-family:Arial,Helvetica,sans-serif;font-size:11.5px;color:#6b7280;line-height:1.55;padding:12px 0;border-bottom:1px solid #ECF1F9;white-space:nowrap;">~20&nbsp;min</td>
+            </tr>
+            <tr>
+              <td width="32" valign="top" style="width:32px;padding:12px 12px 12px 0;border-bottom:1px solid #ECF1F9;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#2547A0;text-align:left;line-height:1.5;">3.</td>
+              <td valign="top" style="padding:12px 12px 12px 0;border-bottom:1px solid #ECF1F9;font-family:Arial,Helvetica,sans-serif;font-size:14.5px;color:#212020;line-height:1.55;">
+                <strong style="font-weight:bold;">Review the Facilitator&rsquo;s Guide</strong>
+                <span style="color:#6b7280;font-size:13px;">&nbsp;&middot;&nbsp;the canonical reference for delivering ILS sessions</span>
+              </td>
+              <td valign="top" align="right" style="font-family:Arial,Helvetica,sans-serif;font-size:11.5px;color:#6b7280;line-height:1.55;padding:12px 0;border-bottom:1px solid #ECF1F9;white-space:nowrap;">60&ndash;90&nbsp;min</td>
+            </tr>
+            <tr>
+              <td width="32" valign="top" style="width:32px;padding:12px 12px 12px 0;border-bottom:1px solid #ECF1F9;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#2547A0;text-align:left;line-height:1.5;">4.</td>
+              <td valign="top" style="padding:12px 12px 12px 0;border-bottom:1px solid #ECF1F9;font-family:Arial,Helvetica,sans-serif;font-size:14.5px;color:#212020;line-height:1.55;">
+                <strong style="font-weight:bold;">Watch the ILS Quick Tip Videos</strong>
+                <span style="color:#6b7280;font-size:13px;">&nbsp;&middot;&nbsp;short, practical highlights for delivery and facilitation</span>
+              </td>
+              <td valign="top" align="right" style="font-family:Arial,Helvetica,sans-serif;font-size:11.5px;color:#6b7280;line-height:1.55;padding:12px 0;border-bottom:1px solid #ECF1F9;white-space:nowrap;">~30&nbsp;min</td>
+            </tr>
+            <tr>
+              <td width="32" valign="top" style="width:32px;padding:12px 12px 12px 0;border-bottom:1px solid #ECF1F9;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#2547A0;text-align:left;line-height:1.5;">5.</td>
+              <td valign="top" style="padding:12px 12px 12px 0;border-bottom:1px solid #ECF1F9;font-family:Arial,Helvetica,sans-serif;font-size:14.5px;color:#212020;line-height:1.55;">
+                <strong style="font-weight:bold;">Schedule your one-hour Q&amp;A with Philip</strong>
+                <span style="color:#6b7280;font-size:13px;">&nbsp;&middot;&nbsp;the final step &mdash; reach out once you&rsquo;ve completed the above</span>
+              </td>
+              <td valign="top" align="right" style="font-family:Arial,Helvetica,sans-serif;font-size:11.5px;color:#6b7280;line-height:1.55;padding:12px 0;border-bottom:1px solid #ECF1F9;white-space:nowrap;">60&nbsp;min</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+
+    <!-- Section divider -->
+    <tr>
+      <td style="padding:0 36px;"><div style="height:1px;background:#D9E4F3;line-height:1px;font-size:1px;">&nbsp;</div></td>
+    </tr>
+
+    <!-- ============ STEP 2 — E-COURSE ============ -->
+    <tr>
+      <td style="padding:0 36px;"><div style="height:1px;background:#D9E4F3;line-height:1px;font-size:1px;">&nbsp;</div></td>
+    </tr>
+    <tr>
+      <td style="padding:32px 36px 0 36px;font-family:Arial,Helvetica,sans-serif;">
+        <div style="font-size:11px;font-weight:bold;letter-spacing:0.18em;text-transform:uppercase;color:#2547A0;margin:0 0 8px 0;">Step 2 of 5 &middot; ~20 min</div>
+        <div style="font-size:20px;font-weight:bold;color:#212020;line-height:1.3;margin:0 0 10px 0;">Complete the ILS E-Learning Course</div>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:0 36px 18px 36px;font-family:Arial,Helvetica,sans-serif;color:#212020;font-size:15px;line-height:1.6;">
+        <p style="margin:0 0 14px 0;">The E-Course pairs short videos with key scenarios about each Interpersonal Leadership Style and the science behind them &mdash; it&rsquo;s designed to deepen what the survey introduced.</p>
+        <p style="margin:0 0 0 0;color:#4a5468;font-size:13.5px;">Plan to take the course shortly after registering. <span style="color:#6b7280;">Requires&nbsp;IE&nbsp;9+&nbsp;/&nbsp;Firefox&nbsp;27+&nbsp;/&nbsp;Chrome&nbsp;30+ &middot; Windows&nbsp;7+&nbsp;/&nbsp;macOS&nbsp;10.5+.</span></p>
+      </td>
+    </tr>
+
+    <!-- Promo code box -->
+    <tr>
+      <td align="center" style="padding:0 36px 10px 36px;">
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin:0 auto;background:#ECF1F9;border:1px solid #c7d4ea;border-collapse:collapse;">
+          <tbody><tr>
+            <td align="center" style="padding:12px 28px;font-family:Arial,Helvetica,sans-serif;">
+              <div style="font-size:11px;font-weight:bold;letter-spacing:0.18em;text-transform:uppercase;color:#2547A0;margin:0 0 4px 0;">Promo code</div>
+              <div style="font-family:'Courier New',Courier,monospace;font-size:24px;font-weight:bold;color:#212020;letter-spacing:0.06em;line-height:1.1;">open</div>
+            </td>
+          </tr></tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding:0 36px 22px 36px;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:#6b7280;line-height:1.5;">
+        Enter this in the &ldquo;Promo Code&rdquo; field, then click <strong style="font-weight:bold;color:#212020;">Apply Promo Code</strong> before submitting.
+      </td>
+    </tr>
+
+    <!-- CTA -->
+    <tr>
+      <td align="center" style="padding:0 36px 12px 36px;">
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin:0 auto;">
+          <tbody><tr>
+            <td align="center" style="background:#2547A0;border-radius:999px;">
+              <a href="https://webinar.strattonindex.com/ils#608" style="display:inline-block;padding:14px 32px;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:bold;color:#ffffff;text-decoration:none;letter-spacing:0.01em;border-radius:999px;">
+                Register for the E-Course &rarr;
+              </a>
+            </td>
+          </tr></tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding:0 36px 32px 36px;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:#6b7280;line-height:1.5;">
+        Or paste this into your browser:<br>
+        <a href="https://webinar.strattonindex.com/ils#608" style="color:#2547A0;text-decoration:underline;word-break:break-all;">https://webinar.strattonindex.com/ils#608</a>
+      </td>
+    </tr>
+
+    <!-- ============ STEP 3 — FACILITATOR GUIDE ============ -->
+    <tr>
+      <td style="padding:0 36px;"><div style="height:1px;background:#D9E4F3;line-height:1px;font-size:1px;">&nbsp;</div></td>
+    </tr>
+    <tr>
+      <td style="padding:32px 36px 0 36px;font-family:Arial,Helvetica,sans-serif;">
+        <div style="font-size:11px;font-weight:bold;letter-spacing:0.18em;text-transform:uppercase;color:#2547A0;margin:0 0 8px 0;">Step 3 of 5 &middot; 60&ndash;90 min</div>
+        <div style="font-size:20px;font-weight:bold;color:#212020;line-height:1.3;margin:0 0 10px 0;">Review the Facilitator&rsquo;s Guide</div>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:0 36px 32px 36px;font-family:Arial,Helvetica,sans-serif;color:#212020;font-size:15px;line-height:1.6;">
+        <p style="margin:0 0 0 0;">The Facilitator&rsquo;s Guide is attached to this email &mdash; it&rsquo;s the canonical reference for running ILS sessions. Take your time with it; we&rsquo;ll assume familiarity with it during your Q&amp;A.</p>
+      </td>
+    </tr>
+
+    <!-- ============ STEP 4 — RESOURCE LIBRARY ============ -->
+    <tr>
+      <td style="padding:0 36px;"><div style="height:1px;background:#D9E4F3;line-height:1px;font-size:1px;">&nbsp;</div></td>
+    </tr>
+    <tr>
+      <td style="padding:32px 36px 0 36px;font-family:Arial,Helvetica,sans-serif;">
+        <div style="font-size:11px;font-weight:bold;letter-spacing:0.18em;text-transform:uppercase;color:#2547A0;margin:0 0 8px 0;">Step 4 of 5 &middot; ~30 min</div>
+        <div style="font-size:20px;font-weight:bold;color:#212020;line-height:1.3;margin:0 0 10px 0;">Watch the ILS Quick Tip Videos</div>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:0 36px 18px 36px;font-family:Arial,Helvetica,sans-serif;color:#212020;font-size:15px;line-height:1.6;">
+        <p style="margin:0 0 14px 0;">Short, practical highlights on delivery and facilitation. The Quick Tip Videos and the full Resource Library live on our website &mdash; both are gated for licensed facilitators only.</p>
+        <p style="margin:0 0 18px 0;color:#4a5468;font-size:14px;">From <a href="https://www.strattonindex.com" style="color:#2547A0;text-decoration:underline;">strattonindex.com</a>, open the <strong style="font-weight:bold;color:#212020;">Resources</strong> tab, enter the password below, and click <strong style="font-weight:bold;color:#212020;">Submit</strong>.</p>
+      </td>
+    </tr>
+
+    <!-- Password box -->
+    <tr>
+      <td align="center" style="padding:0 36px 10px 36px;">
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin:0 auto;background:#ECF1F9;border:1px solid #c7d4ea;border-collapse:collapse;">
+          <tbody><tr>
+            <td align="center" style="padding:12px 28px;font-family:Arial,Helvetica,sans-serif;">
+              <div style="font-size:11px;font-weight:bold;letter-spacing:0.18em;text-transform:uppercase;color:#2547A0;margin:0 0 4px 0;">Resources password</div>
+              <div style="font-family:'Courier New',Courier,monospace;font-size:24px;font-weight:bold;color:#212020;letter-spacing:0.06em;line-height:1.1;">ilsresources</div>
+            </td>
+          </tr></tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding:0 36px 32px 36px;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:#6b7280;line-height:1.5;">
+        Same password unlocks the full Resource Library.
+      </td>
+    </tr>
+
+    <!-- ============ STEP 5 — Q&A ============ -->
+    <tr>
+      <td style="padding:0 36px;"><div style="height:1px;background:#D9E4F3;line-height:1px;font-size:1px;">&nbsp;</div></td>
+    </tr>
+    <tr>
+      <td style="padding:32px 36px 0 36px;font-family:Arial,Helvetica,sans-serif;">
+        <div style="font-size:11px;font-weight:bold;letter-spacing:0.18em;text-transform:uppercase;color:#2547A0;margin:0 0 8px 0;">Step 5 of 5 &middot; 60 min &middot; the final step</div>
+        <div style="font-size:20px;font-weight:bold;color:#212020;line-height:1.3;margin:0 0 10px 0;">Schedule your Q&amp;A with Philip</div>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:0 36px 22px 36px;font-family:Arial,Helvetica,sans-serif;color:#212020;font-size:15px;line-height:1.6;">
+        <p style="margin:0 0 0 0;">Once steps 2&ndash;4 are behind you, email me to schedule a one-hour Q&amp;A with Philip. Bring whatever&rsquo;s on your mind &mdash; the call is yours to use.</p>
+      </td>
+    </tr>
+
+    <!-- CTA (mailto) -->
+    <tr>
+      <td align="center" style="padding:0 36px 12px 36px;">
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin:0 auto;">
+          <tbody><tr>
+            <td align="center" style="background:#2547A0;border-radius:999px;">
+              <a href="mailto:laura@strattonindex.com?subject=Ready%20to%20schedule%20my%20ILS%20Q%26A" style="display:inline-block;padding:14px 32px;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:bold;color:#ffffff;text-decoration:none;letter-spacing:0.01em;border-radius:999px;" data-comment-anchor="8b5b411d81-a">
+                Email Laura to schedule &rarr;
+              </a>
+            </td>
+          </tr></tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding:0 36px 36px 36px;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:#6b7280;line-height:1.5;">
+        <a href="mailto:laura@strattonindex.com" style="color:#2547A0;text-decoration:underline;">laura@strattonindex.com</a>
+      </td>
+    </tr>
+
+    <!-- ============ FOR LATER — ORDER FORM ============ -->
+    <tr>
+      <td style="padding:0 36px;">
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="100%" style="width:100%;background:#F7F8FA;border:1px solid #D9E4F3;border-collapse:collapse;">
+          <tbody>
+            <tr>
+              <td style="padding:20px 22px 6px 22px;font-family:Arial,Helvetica,sans-serif;">
+                <div style="font-size:11px;font-weight:bold;letter-spacing:0.18em;text-transform:uppercase;color:#2547A0;margin:0 0 8px 0;">For later &middot; running your first session</div>
+                <div style="font-size:17px;font-weight:bold;color:#212020;line-height:1.35;margin:0 0 10px 0;">When you&rsquo;re ready to bring the ILS to your clients</div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:0 22px 14px 22px;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#212020;line-height:1.6;">
+                <p style="margin:0 0 12px 0;">Once you&rsquo;re certified, you&rsquo;ll order surveys for your groups through our online order form. Survey fees are <strong style="font-weight:bold;">$25 per participant</strong> with digital delivery of all reports and materials. Change fees apply at $25 per incident &mdash; see your licensing agreement for specifics.</p>
+
+                <div style="font-size:11px;font-weight:bold;letter-spacing:0.16em;text-transform:uppercase;color:#4a5468;margin:14px 0 6px 0;">How an order flows</div>
+                <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="100%" style="width:100%;border-collapse:collapse;">
+                  <tbody>
+                    <tr>
+                      <td valign="top" style="padding:6px 0;font-family:Arial,Helvetica,sans-serif;font-size:13.5px;color:#212020;line-height:1.55;border-bottom:1px solid #E4EAF3;"><strong style="font-weight:bold;color:#2547A0;">1.</strong>&nbsp;&nbsp;Complete the order form and upload your participant list (first &amp; last names).</td>
+                    </tr>
+                    <tr>
+                      <td valign="top" style="padding:6px 0;font-family:Arial,Helvetica,sans-serif;font-size:13.5px;color:#212020;line-height:1.55;border-bottom:1px solid #E4EAF3;"><strong style="font-weight:bold;color:#2547A0;">2.</strong>&nbsp;&nbsp;We create the group and send you the link, code, and participant instructions &mdash; usually within 24 hours.</td>
+                    </tr>
+                    <tr>
+                      <td valign="top" style="padding:6px 0;font-family:Arial,Helvetica,sans-serif;font-size:13.5px;color:#212020;line-height:1.55;border-bottom:1px solid #E4EAF3;"><strong style="font-weight:bold;color:#2547A0;">3.</strong>&nbsp;&nbsp;We send completion updates while the group is open (we recommend 10&ndash;14 days).</td>
+                    </tr>
+                    <tr>
+                      <td valign="top" style="padding:6px 0;font-family:Arial,Helvetica,sans-serif;font-size:13.5px;color:#212020;line-height:1.55;"><strong style="font-weight:bold;color:#2547A0;">4.</strong>&nbsp;&nbsp;Individual and group reports are emailed to you <strong style="font-weight:bold;">the day after</strong> the group closes.</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div style="font-size:11px;font-weight:bold;letter-spacing:0.16em;text-transform:uppercase;color:#4a5468;margin:18px 0 6px 0;">Tips when filling out the form</div>
+                <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="100%" style="width:100%;border-collapse:collapse;">
+                  <tbody>
+                    <tr>
+                      <td valign="top" width="120" style="width:120px;padding:5px 10px 5px 0;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:#2547A0;font-weight:bold;line-height:1.55;">Event date</td>
+                      <td valign="top" style="padding:5px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#212020;line-height:1.55;">The date of your session.</td>
+                    </tr>
+                    <tr>
+                      <td valign="top" width="120" style="width:120px;padding:5px 10px 5px 0;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:#2547A0;font-weight:bold;line-height:1.55;">Arrive-by date</td>
+                      <td valign="top" style="padding:5px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#212020;line-height:1.55;">The date you need reports in hand.</td>
+                    </tr>
+                    <tr>
+                      <td valign="top" width="120" style="width:120px;padding:5px 10px 5px 0;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:#2547A0;font-weight:bold;line-height:1.55;">Open date</td>
+                      <td valign="top" style="padding:5px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#212020;line-height:1.55;">When the survey opens for participants.</td>
+                    </tr>
+                    <tr>
+                      <td valign="top" width="120" style="width:120px;padding:5px 10px 5px 0;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:#2547A0;font-weight:bold;line-height:1.55;">Close date</td>
+                      <td valign="top" style="padding:5px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#212020;line-height:1.55;">Set this <strong style="font-weight:bold;">at least two days</strong> before your arrive-by date &mdash; reports go out the day after close, and we operate on EST.</td>
+                    </tr>
+                    <tr>
+                      <td valign="top" width="120" style="width:120px;padding:5px 10px 5px 0;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:#2547A0;font-weight:bold;line-height:1.55;">Participants</td>
+                      <td valign="top" style="padding:5px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#212020;line-height:1.55;">First and last names only, Excel is great. Decide whether participants can download their own results at completion &mdash; that gives them access before your session.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="left" style="padding:4px 22px 22px 22px;">
+                <a href="https://www.strattonindex.com/order-form" style="display:inline-block;padding:11px 22px;font-family:Arial,Helvetica,sans-serif;font-size:13.5px;font-weight:bold;color:#2547A0;background:#ffffff;border:1px solid #2547A0;text-decoration:none;letter-spacing:0.01em;border-radius:999px;">
+                  Open the order form &rarr;
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+
+    <!-- Closing -->
+    <tr>
+      <td style="padding:32px 36px 8px 36px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#212020;">
+        <p style="margin:0 0 18px 0;">If anything is unclear &mdash; the E-Course, the order form, or anything in between &mdash; just reply to this email. Looking forward to working with you.</p>
+
+        <p style="margin:0 0 14px 0;">Warmly,</p>
+
+        <p style="margin:0;font-weight:bold;color:#212020;">Laura Ferrara</p>
+        <p style="margin:0;font-size:13px;color:#6b7280;line-height:1.5;">ILS Administrator, Stratton Index</p>
+        <p style="margin:0;font-size:13px;line-height:1.5;"><a href="mailto:laura@strattonindex.com" style="color:#2547A0;text-decoration:none;">laura@strattonindex.com</a></p>
+      </td>
+    </tr>
+
+    <!-- Footer -->
+    <tr>
+      <td style="padding:22px 36px 22px 36px;border-top:1px solid #ECF1F9;background:#FAFBFD;font-family:Arial,Helvetica,sans-serif;font-size:11.5px;line-height:1.55;color:#8a93a4;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+          <tbody><tr>
+            <td valign="top" style="font-family:Arial,Helvetica,sans-serif;font-size:11.5px;color:#8a93a4;line-height:1.55;">
+              <span style="font-weight:bold;color:#4a5468;letter-spacing:0.04em;text-transform:uppercase;font-size:10px;">Stratton Index</span><br>
+              Owner of the Interpersonal Leadership Styles<sup style="font-size:7px;">&trade;</sup> assessment.
+            </td>
+            <td valign="top" align="right" style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#98a0b0;line-height:1.55;">
+              <a href="https://www.strattonindex.com" style="color:#98a0b0;text-decoration:none;">strattonindex.com</a>
+            </td>
+          </tr></tbody>
+        </table>
+      </td>
+    </tr>
+
+  </tbody></table>
+  <!-- /email -->
+
+  <!-- Mail-merge guidance — viewer-only -->
+  <div class="merge-hint">
+    <strong>Mail-merge note &mdash;</strong> the placeholder <code>{{FirstName}}</code> appears in the salutation; the group code <code>DJP26</code> is fixed for this onboarding survey. Swap merge syntax to match your tool (Outlook: <code>&laquo;FirstName&raquo;</code> &middot; Gmail multi-send: <code>@firstname</code>). The &ldquo;From&rdquo;/&ldquo;To&rdquo;/&ldquo;Cc&rdquo; rows above the email card are preview only &mdash; don&rsquo;t copy them.
+  </div>
+
+</div>
+
+</body>
+</html>
