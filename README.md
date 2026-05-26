@@ -4,7 +4,7 @@ Email templates used by Stratton Index for the ILS facilitator certification pro
 
 **Live previews (no login required):**
 - [Facilitator Welcome Email](https://philipdns.github.io/stratton-index-ils-product/Facilitator%20Welcome%20Email.html) — standard onboarding, 5 steps
-- [Facilitator Welcome Email — Post-Survey](https://philipdns.github.io/stratton-index-ils-product/Facilitator%20Welcome%20Email%20-%20Post-Survey.html) — for facilitators who already took the ILS, 4 steps
+- [Facilitator Welcome Email — Survey Step Completed](https://philipdns.github.io/stratton-index-ils-product/Facilitator%20Welcome%20Email%20--%20Survey%20Step%20Completed.html) — for facilitators who already took the ILS, 4 steps
 
 ---
 
@@ -23,7 +23,7 @@ Use for facilitators who have **not** previously taken the ILS survey. Full 5-st
 
 ---
 
-### `Facilitator Welcome Email - Post-Survey.html`
+### `Facilitator Welcome Email -- Survey Step Completed.html`
 
 Use for facilitators who **already completed the ILS survey** through another facilitator. Skips Step 1 (the survey) — 4 remaining steps.
 
