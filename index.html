@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stratton Index — ILS Resources</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #ECF1F9;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #212020;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    background: #ffffff;
+    border-bottom: 1px solid #D9E4F3;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header img {
+    height: 32px;
+    width: auto;
+    display: block;
+  }
+  .site-header .badge {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #6b7280;
+  }
+
+  /* ── Page wrapper ── */
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* ── Page title ── */
+  .page-eyebrow {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #2547A0;
+    margin: 0 0 10px 0;
+  }
+  .page-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #212020;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+  }
+  .page-subtitle {
+    font-size: 15px;
+    color: #6b7280;
+    margin: 0 0 48px 0;
+    line-height: 1.6;
+  }
+
+  /* ── Section ── */
+  .section {
+    margin-bottom: 40px;
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D9E4F3;
+  }
+  .section-title {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #2547A0;
+    margin: 0;
+  }
+  .section-count {
+    font-size: 12px;
+    color: #98a0b0;
+  }
+
+  /* ── Resource card ── */
+  .card {
+    background: #ffffff;
+    border: 1px solid #D9E4F3;
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .card:hover {
+    border-color: #2547A0;
+    box-shadow: 0 2px 8px rgba(37,71,160,0.08);
+  }
+  .card-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #212020;
+    margin: 0 0 4px 0;
+    line-height: 1.4;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .card-tag {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #2547A0;
+    background: #ECF1F9;
+    border: 1px solid #c7d4ea;
+    border-radius: 4px;
+    padding: 2px 7px;
+    margin-right: 6px;
+    white-space: nowrap;
+  }
+  .card-tags {
+    margin-top: 8px;
+  }
+  .card-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .btn-preview {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #2547A0;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 999px;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+  .btn-preview:hover {
+    background: #1d3a85;
+  }
+
+  /* ── Footer ── */
+  .site-footer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px 40px;
+    font-size: 12px;
+    color: #98a0b0;
+    line-height: 1.6;
+    border-top: 1px solid #D9E4F3;
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .site-footer a {
+    color: #98a0b0;
+    text-decoration: none;
+  }
+  .site-footer a:hover {
+    color: #2547A0;
+  }
+
+  @media (max-width: 560px) {
+    .site-header { padding: 16px 20px; }
+    .page { padding: 32px 16px 60px; }
+    .card { flex-direction: column; gap: 12px; }
+    .card-action { flex-direction: row; align-items: center; }
+    .site-footer { flex-direction: column; gap: 4px; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <img src="https://images.squarespace-cdn.com/content/v1/6865588feaced76df6bb0ea5/a8a0d5e6-f1fe-4b9a-ae15-6735637bd6e4/1.+Stratton+Index+Logo_Horizontal+Lookup+1.png?format=1500w" alt="Stratton Index">
+  <span class="badge">Internal Resources</span>
+</header>
+
+<main class="page">
+
+  <p class="page-eyebrow">ILS Product</p>
+  <h1 class="page-title">Resources</h1>
+  <p class="page-subtitle">Email templates and assets for the ILS facilitator certification process. Click Preview to open a rendered version you can copy and paste directly into an email.</p>
+
+  <!-- ── Facilitator Onboarding Emails ── -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Facilitator Onboarding Emails</h2>
+      <span class="section-count">2 templates</span>
+    </div>
+
+    <a class="card" href="Facilitator Welcome Email.html" target="_blank">
+      <div class="card-body">
+        <p class="card-title">Facilitator Welcome Email</p>
+        <p class="card-desc">Standard onboarding for new facilitators who have not yet taken the ILS survey. Walks through all 5 certification steps.</p>
+        <div class="card-tags">
+          <span class="card-tag">5 steps</span>
+          <span class="card-tag">Includes survey</span>
+        </div>
+      </div>
+      <div class="card-action">
+        <span class="btn-preview">Preview →</span>
+      </div>
+    </a>
+
+    <a class="card" href="Facilitator Welcome Email - Post-Survey.html" target="_blank">
+      <div class="card-body">
+        <p class="card-title">Facilitator Welcome Email — Post-Survey</p>
+        <p class="card-desc">For facilitators who already completed the ILS through another facilitator. Skips the survey step — begins at the E-Course.</p>
+        <div class="card-tags">
+          <span class="card-tag">4 steps</span>
+          <span class="card-tag">Survey already done</span>
+        </div>
+      </div>
+      <div class="card-action">
+        <span class="btn-preview">Preview →</span>
+      </div>
+    </a>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>Stratton Index &mdash; Internal use only</span>
+  <a href="https://github.com/philipdns/stratton-index-ils-product" target="_blank">Edit on GitHub →</a>
+</footer>
+
+</body>
+</html>
